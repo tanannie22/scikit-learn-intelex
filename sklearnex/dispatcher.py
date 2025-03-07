@@ -105,11 +105,11 @@ def get_patch_map_core(preview=False):
         import sklearn.linear_model as linear_model_module
         import sklearn.manifold as manifold_module
         import sklearn.metrics as metrics_module
+        import sklearn.metrics.pairwise as pairwise_module
         import sklearn.model_selection as model_selection_module
         import sklearn.neighbors as neighbors_module
         import sklearn.svm as svm_module
-        import sklearn.metrics.pairwise as pairwise_module
-        
+
         if sklearn_check_version("1.2.1"):
             import sklearn.utils.parallel as parallel_module
         else:
@@ -156,7 +156,6 @@ def get_patch_map_core(preview=False):
         from .svm import SVR as SVR_sklearnex
         from .svm import NuSVC as NuSVC_sklearnex
         from .svm import NuSVR as NuSVR_sklearnex
-        from .kernel_functions import rbf_kernel as rbf_kernel_sklearnex
 
         # DBSCAN
         mapping.pop("dbscan")
