@@ -105,7 +105,6 @@ def get_patch_map_core(preview=False):
         import sklearn.linear_model as linear_model_module
         import sklearn.manifold as manifold_module
         import sklearn.metrics as metrics_module
-        import sklearn.metrics.pairwise as pairwise_module
         import sklearn.model_selection as model_selection_module
         import sklearn.neighbors as neighbors_module
         import sklearn.svm as svm_module
@@ -168,18 +167,6 @@ def get_patch_map_core(preview=False):
         # PCA
         mapping.pop("pca")
         mapping["pca"] = [[(decomposition_module, "PCA", PCA_sklearnex), None]]
-
-        # RBF Kernel
-        mapping["rbf_kernel"] = [
-            [
-                (
-                    pairwise_module,
-                    "rbf_kernel",
-                    rbf_kernel_sklearnex,
-                ),
-                None,
-            ]
-        ]
 
         # SVM
         mapping.pop("svm")
